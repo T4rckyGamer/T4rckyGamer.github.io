@@ -1,0 +1,87 @@
+<html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="description" content="KassemSYR ROM Downloads">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      <meta name="generator" content="BlackBirdOS">
+      <title>// Downloads //</title>
+      <!--<meta name="msapplication-config" content="/ieconfig.xml">-->
+      <link rel="shortcut icon" href="assist/images/download.svg">
+      <link href="assist/css/download.css" rel="stylesheet">
+      <link rel="stylesheet" href="assist/css/style.css">
+   </head>
+   <body>
+   	<div id="loading">
+		<h1>Downloads!</h1>
+        <div id="spinner"></div>
+    </div>
+      <main>
+      	<div class="card">
+            <div>
+               <div>
+                  <div>
+                     <div class="select">
+                        <span class="select__title">ROM</span>
+                        <select id="devices">
+                           <option>Please Select a ROM,...</option>
+                        </select>
+                     </div>
+                  </div>
+                     <div class="select">
+                        <span class="select__title">Device</span>
+                        <select id="versions"></select>
+                          <div id="textDiv" style="color:Green; font-family:Calibri; font-size:small; font-weight:bold"></div>
+                     </div>
+                  </div>
+                     <div class="select">
+                        <span class="select__title">Version</span>
+                        <select id="roms"></select>
+                     </div>
+                     <a id="download" class="card card--small" style="display: none;">
+                        <br>
+                        <div class="link link--elevated">
+                           <img src="assist/images/download.svg" onclick="visitPage()">
+                           <span class="link__title" onclick="visitPage()">Download</span>
+                           <span id="downloadDate" class="link__title link__title--right"></span>
+                        </div>
+                     </a>
+                  </div>
+               <br>
+            </div>     </div>
+         </div>
+      </main>
+      </div>
+		<footer id="footer">
+			&copy; 2020 TurkiKSA
+		</footer>
+		<script src="assist/js/jquery-3.4.1.min.js"></script>
+	<script>
+        setTimeout(function() {
+            document.getElementById("loading").classList.add("animated");
+            document.getElementById("loading").classList.add("fadeOut");
+            setTimeout(function() {
+                document.getElementById("loading").classList.remove("animated");
+                document.getElementById("loading").classList.remove("fadeOut");
+                document.getElementById("loading").style.display = "none";
+            }, 800);
+        }, 1500);
+    </script>
+    <script>
+        const LoadPage = new PageLoad({
+            container: "textDiv",
+            animate: false,
+            gutter: 30, // default gutter size
+            static: true,
+            useMin: false,
+            maxColumns: 2,
+            useTransform: true
+        });
+        
+        $("document").ready(() => {
+            LoadPage.listen();
+        });
+    </script>
+	</div>
+      <script type="text/javascript" src="assist/js/dll.js"></script>
+   </body>
+</html>
